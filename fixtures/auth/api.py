@@ -1,18 +1,18 @@
 from requests import Response
 
-from fixtures.auth.model import AuthUser
+from fixtures.auth.model import AuthResponse, Auth
 from fixtures.validator import Validator
 from common.deco import logging as log
 
 
-class LogIn(Validator):
+class AuthUser(Validator):
     def __init__(self, app):
         self.app = app
 
     POST_AUTH = "/auth"
 
-    @log("Auth user")
-    def login(self, data: AuthUser, type_response=None) -> Response:
+    @log("Login user")
+    def login(self, data: Auth, type_response=AuthResponse) -> Response:
         """
         https://app.swaggerhub.com/apis-docs/berpress/flask-rest-api/1.0.0#/auth/authUser # noqa
         """

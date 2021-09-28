@@ -7,17 +7,17 @@ fake = Faker()
 
 
 @attr.s
-class AuthUser(BaseClass):
+class Auth(BaseClass):
     username: str = attr.ib(default=None)
     password: str = attr.ib(default=None)
 
     @staticmethod
     def random():
-        return AuthUser(username=fake.email(), password=fake.password())
+        return Auth(username=fake.email(), password=fake.password())
 
 
 @attr.s
-class AuthUserResponse:
+class AuthResponse:
     access_token: str = attr.ib()
 
 
