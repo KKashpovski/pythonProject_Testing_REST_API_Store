@@ -1,5 +1,7 @@
-from requests import Response
+"""API method for registration."""
 
+
+from requests import Response
 from fixtures.register.model import RegisterUser, RegisterUserResponse
 from fixtures.validator import Validator
 from common.deco import logging as log

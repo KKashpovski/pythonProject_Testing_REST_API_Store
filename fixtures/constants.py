@@ -1,3 +1,6 @@
+"""Constants."""
+
+
 class ResponseText:
     MESSAGE_REGISTER_USER = "User created successfully."
     MESSAGE_USER_PASSWORD_REQUIRED = "Username and password are required fields"

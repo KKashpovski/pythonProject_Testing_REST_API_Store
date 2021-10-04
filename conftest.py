@@ -1,8 +1,9 @@
-import logging
+"""Fixtures."""
 
+
+import logging
 import allure
 import pytest
-
 from fixtures.app import StoreApp
 from fixtures.common_models import UserStore
 from fixtures.register.model import RegisterUser
@@ -20,9 +21,7 @@ def app(request):
 
 @pytest.fixture
 def register_user(app) -> UserStore:
-    """
-    Register new user
-    """
+    """Register new user."""
     data = RegisterUser.random()
     res = app.register.register(data=data)
     data = UserStore(user=data, user_uuid=res.data.uuid)
@@ -31,9 +30,7 @@ def register_user(app) -> UserStore:
 
 @pytest.fixture
 def auth_user(app, register_user) -> UserStore:
-    """
-    Login user
-    """
+    """Login user."""
     res = app.auth.login(data=register_user.user)
     token = res.data.access_token
     header = {"Authorization": f"JWT {token}"}
@@ -44,9 +41,7 @@ def auth_user(app, register_user) -> UserStore:
 
 @pytest.fixture
 def user_info(app, auth_user) -> UserStore:
-    """
-    Add user info
-    """
+    """Add user info."""
     data = AddUserInfo.random()
     app.user_info.add_user_info(
         uuid=auth_user.user_uuid, data=data, header=auth_user.header

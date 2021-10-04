@@ -16,14 +16,14 @@ git: https://github.com/KKashpovski/pythonProject_Testing_REST_API_Store
 url: https://stores-tests-api.herokuapp.com
 
 
-###How to start
+### How to start
 
-Use python 3.8 +
+Use python 3.9 +
 Create and activate virtual environments
 
 ```
-python3 -m venv env
-source env/bin/activate
+python -m venv venv
+venv\Scripts\activate.bat
 ```
 
 Run in terminal
@@ -32,20 +32,14 @@ Run in terminal
 pip install -r requirements.txt
 ```
 
-or install poetry https://python-poetry.org/, then
-
-```
-poetry install
-```
-
 and add pre-commit
 ```
 pre-commit install
 ```
 
-###Run all tests
+### Run all tests
 
-```python
+```
 pytest
 ```
-"# pythonProject_REST_API_Store_Testing" 
+"pythonProject_REST_API_Store_Testing" 
