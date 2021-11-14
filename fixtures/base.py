@@ -1,3 +1,6 @@
+"""Base Class return a dictionary."""
+
+
 import json
 
 

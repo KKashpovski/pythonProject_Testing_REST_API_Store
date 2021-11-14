@@ -1,3 +1,6 @@
+"""Tests for registration."""
+
+
 import pytest
 import allure
 from fixtures.common_models import MessageResponse
@@ -5,8 +8,8 @@ from fixtures.constants import ResponseText
 from fixtures.register.model import RegisterUser, RegisterUserResponse
 
 
+@allure.feature("register user")
 class TestRegisterUser:
-    @allure.feature("register user with valid data")
     @allure.story("Регистрация пользователя с валидными данными")
     def test_register_user_with_valid_data(self, app):
         """
@@ -19,7 +22,6 @@ class TestRegisterUser:
         assert res.status_code == 201, "Check status code"
         assert res.data.message == ResponseText.MESSAGE_REGISTER_USER
 
-    @allure.feature("register user with empty data")
     @allure.story("Попытка регистрации пользователя с пустыми полями")
     @pytest.mark.parametrize("field", ["username", "password"])
     def test_register_user_with_empty_data(self, app, field):

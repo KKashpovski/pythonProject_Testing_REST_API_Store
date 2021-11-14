@@ -1,3 +1,6 @@
+"""Request method for client."""
+
+
 import requests
 from requests import Response
 

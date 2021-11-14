@@ -1,5 +1,7 @@
-import cattr
+"""Validation."""
 
+
+import cattr
 from requests import Response
 
 # logger = logging.getLogger("ncps")

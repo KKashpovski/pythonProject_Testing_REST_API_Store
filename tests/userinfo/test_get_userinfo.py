@@ -1,11 +1,11 @@
+"""Tests for get user info."""
+
+
 import allure
 
-from fixtures.constants import ResponseText
-from fixtures.user_info.model import AddUserInfo
 
-
+@allure.feature("get user info")
 class TestGetUserInfo:
-    @allure.feature("get user info")
     @allure.story("Отображение пользовательской информации")
     def test_get_user_info(self, app, user_info):
         """

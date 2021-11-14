@@ -1,9 +1,7 @@
-from requests import Response
+"""API methods for userinfo."""
 
-from fixtures.user_info.model import AddUserInfo
-from fixtures.validator import Validator
-from requests import Response
 
+from requests import Response
 from fixtures.common_models import MessageResponse
 from fixtures.user_info.model import AddUserInfo, GetUserInfoResponse
 from fixtures.validator import Validator

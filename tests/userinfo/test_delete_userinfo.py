@@ -1,11 +1,12 @@
+"""Tests for delete user info."""
+
+
 import allure
-
 from fixtures.constants import ResponseText
-from fixtures.user_info.model import AddUserInfo
 
 
+@allure.feature("delete user info")
 class TestDelUserInfo:
-    @allure.feature("del user info")
     @allure.story("Удаление пользовательской информации")
     def test_del_user_info(self, app, user_info):
         """

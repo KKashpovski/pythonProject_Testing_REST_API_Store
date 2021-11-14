@@ -1,5 +1,4 @@
 import attr
-
 from fixtures.base import BaseClass
 from fixtures.register.model import RegisterUser
 from fixtures.user_info.model import AddUserInfo
